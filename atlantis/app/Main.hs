@@ -2,5 +2,8 @@ module Main where
 
 import Lib
 
+import Graphics.Gloss
+
 main :: IO ()
-main = someFunc
+main = do
+    play (InWindow "hAtlantis" (tamJanela, tamJanela) (500, 500)) white 60 mundoInicial desenhaMundo tratarEvento atualizaMundo
