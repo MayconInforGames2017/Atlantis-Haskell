@@ -1,9 +1,13 @@
 module Main where
 
 import Lib
-
 import Graphics.Gloss
+import System.Random
+import UI
 
 main :: IO ()
 main = do
-    play (InWindow "hAtlantis" (tamJanela, tamJanela) (500, 500)) white 60 mundoInicial desenhaMundo tratarEvento atualizaMundo
+    let mundo = mundoInicial
+    stdGen <- getStdGen
+    play (InWindow "hAtlantis" (900, 900)(3000, 100)) black 60 mundo desenhaMundo tratarEvento atualizaMundo
+
